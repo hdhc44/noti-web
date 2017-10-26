@@ -13,6 +13,7 @@ body{
 .title{
     font-weight: 100;
     font-size: 2.5em;
+    text-align: center;
 }
 #teacher{
   font-size: 0.4em;
@@ -124,6 +125,12 @@ input[type=submit]:hover{
 textarea {
   width: 200px;
   height: 80px;
+}
+.field h3{
+  font-weight: 300;
+}
+.field p{
+  margin: 2px;
 }
 
 @media screen and (max-width:430px){

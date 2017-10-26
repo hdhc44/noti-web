@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
   <meta charset="UTF-8">
@@ -17,8 +17,17 @@
       <div class="wrapper">
         <h1 class="title" style="text-align:center">
           Sign Up
-          </br/>
         </h1>
+        <div class="row center-xs">
+          <div class="field">
+            <form>
+              <input type="radio" id="homeroom" name="radio" value="homeroom">
+              <label for="homeroom">담임</label>
+              <input type="radio" id="subject" name="radio" value="subject">
+              <label for="subject">교과</label>
+            </form>
+          </div>
+        </div>
         <div class="row center-xs">
           <div class="field">
             <input type="text" placeholder="Name" id="input-text">
@@ -40,14 +49,81 @@
           </div>
         </div>
         <div class="row center-xs">
+          <div class="field">
+            <input type="text" placeholder="Room Name" id="room">
+          </div>
+        </div>
+        <div class="row center-xs">
           <input type="submit" name="submit" value="Create Account">
         </div>
-
-
       </div>
     </div>
-
   </div>
+  <script>
+    window.addEventListener('load', function () {
+      var homeroom = document.getElementById('homeroom');
+      var subject = document.getElementById('subject');
+      var room = document.getElementById('room');
+      if (window.Notification && Notification.permission !== "granted") {
+        Notification.requestPermission(function (status) {
+          if (Notification.permission !== status) {
+            Notification.permission = status;
+          }
+        });
+      }
+      subject.addEventListener('click', function () {
+        if (window.Notification && Notification.permission === "granted") {
+          if (status === "granted") {
+            var n = new Notification("교과선생님", {
+              body: '만약 교과선생님일 경우 방 이름을 적으지 않으셔도 됩니다.'
+            });
+          } else if (window.Notification && Notification.permission !== "denied") {
+            Notification.requestPermission(function (status) {
+              if (status === "granted") {
+                var n = new Notification("교과선생님", {
+                  body: '만약 교과선생님일 경우 방 이름을 적으지 않으셔도 됩니다.'
+                });
+              }
+            });
+          }
+        };
+      });
+      homeroom.addEventListener('click', function () {
+        if (window.Notification && Notification.permission === "granted") {
+          if (status === "granted") {
+            var n = new Notification("담임선생님", {
+              body: '방 이름은 ex: "[선린] 1-4"와 비슷하게 만들어주세요'
+            });
+          } else if (window.Notification && Notification.permission !== "denied") {
+            Notification.requestPermission(function (status) {
+              if (status === "granted") {
+                var n = new Notification("담임선생님", {
+                  body: '방 이름은 ex: "[선린] 1-4"와 비슷하게 만들어주세요'
+                });
+              }
+            });
+          }
+        };
+      });
+      room.addEventListener('click', function () {
+        if (window.Notification && Notification.permission === "granted") {
+          if (status === "granted") {
+            var n = new Notification("담임선생님", {
+              body: '방 이름은 ex: "[선린] 1-4"와 비슷하게 만들어주세요'
+            });
+          } else if (window.Notification && Notification.permission !== "denied") {
+            Notification.requestPermission(function (status) {
+              if (status === "granted") {
+                var n = new Notification("담임선생님", {
+                  body: '방 이름은 ex: "[선린] 1-4"와 비슷하게 만들어주세요'
+                });
+              }
+            });
+          }
+        };
+      });
+    });
+  </script>
 </body>
 
 </html>
