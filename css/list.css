@@ -97,7 +97,7 @@ h1{
 .buttons button:hover i{
     color: #36afff;
 }
-.buttons button i {
+.buttons button {
     font-size: 20px;
     display: flex;
     justify-content: center;
@@ -112,6 +112,7 @@ h1{
 .grant {
     float: right;
 }
+
 @media screen and (max-width:430px){
     .card{
         width: 330px;
